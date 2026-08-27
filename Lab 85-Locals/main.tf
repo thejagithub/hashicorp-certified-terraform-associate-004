@@ -23,13 +23,13 @@ resource "aws_vpc" "main" {
   enable_dns_support   = true
 
   tags = {
-    Name        = "${local.name_prefix}vpc-us-east-1"
-    Environment = "local.common_tags.Environment"
-    Project     = "local.common_tags.Project"
-    Owner       = "local.common_tags.Owner"
-    CostCenter  = "local.common_tags.CostCenter"
-    Region      = "local.common_tags.Region"
-    ManagedBy   = "local.common_tags.ManagedBy"
+    Name        = "${local.name_prefix}vpc-${data.aws_region.current.region}"
+    Environment = local.common_tags.Environment
+    Project     = local.common_tags.Project
+    Owner       = local.common_tags.Owner
+    CostCenter  = local.common_tags.CostCenter
+    Region      = local.common_tags.Region
+    ManagedBy   = local.common_tags.ManagedBy
   }
 }
 
@@ -41,12 +41,12 @@ resource "aws_subnet" "public_a" {
 
   tags = {
     Name        = "${local.name_prefix}${data.aws_availability_zones.available.names[0]}-public-subnet-1a"
-    Environment = "local.common_tags.Environment"
-    Project     = "local.common_tags.Project"
-    Owner       = "local.common_tags.Owner"
-    CostCenter  = "local.common_tags.CostCenter"
-    Region      = "local.common_tags.Region"
-    ManagedBy   = "local.common_tags.ManagedBy"
+    Environment = local.common_tags.Environment
+    Project     = local.common_tags.Project
+    Owner       = local.common_tags.Owner
+    CostCenter  = local.common_tags.CostCenter
+    Region      = local.common_tags.Region
+    ManagedBy   = local.common_tags.ManagedBy
     Tier        = "public"
   }
 }
@@ -59,12 +59,12 @@ resource "aws_subnet" "public_b" {
 
   tags = {
     Name        = "${local.name_prefix}${data.aws_availability_zones.available.names[1]}-public-subnet-1b"
-    Environment = "local.common_tags.Environment"
-    Project     = "local.common_tags.Project"
-    Owner       = "local.common_tags.Owner"
-    CostCenter  = "local.common_tags.CostCenter"
-    Region      = "local.common_tags.Region"
-    ManagedBy   = "local.common_tags.ManagedBy"
+    Environment = local.common_tags.Environment
+    Project     = local.common_tags.Project
+    Owner       = local.common_tags.Owner
+    CostCenter  = local.common_tags.CostCenter
+    Region      = local.common_tags.Region
+    ManagedBy   = local.common_tags.ManagedBy
     Tier        = "public"
   }
 }
@@ -77,12 +77,12 @@ resource "aws_subnet" "private_a" {
 
   tags = {
     Name        = "${local.name_prefix}${data.aws_availability_zones.available.names[0]}-private-subnet-1a"
-    Environment = "local.common_tags.Environment"
-    Project     = "local.common_tags.Project"
-    Owner       = "local.common_tags.Owner"
-    CostCenter  = "local.common_tags.CostCenter"
-    Region      = "local.common_tags.Region"
-    ManagedBy   = "local.common_tags.ManagedBy"
+    Environment = local.common_tags.Environment
+    Project     = local.common_tags.Project
+    Owner       = local.common_tags.Owner
+    CostCenter  = local.common_tags.CostCenter
+    Region      = local.common_tags.Region
+    ManagedBy   = local.common_tags.ManagedBy
     Tier        = "private"
   }
 }
@@ -95,12 +95,12 @@ resource "aws_subnet" "private_b" {
 
   tags = {
     Name        = "${local.name_prefix}${data.aws_availability_zones.available.names[1]}-private-subnet-1b"
-    Environment = "local.common_tags.Environment"
-    Project     = "local.common_tags.Project"
-    Owner       = "local.common_tags.Owner"
-    CostCenter  = "local.common_tags.CostCenter"
-    Region      = "local.common_tags.Region"
-    ManagedBy   = "local.common_tags.ManagedBy"
+    Environment = local.common_tags.Environment
+    Project     = local.common_tags.Project
+    Owner       = local.common_tags.Owner
+    CostCenter  = local.common_tags.CostCenter
+    Region      = local.common_tags.Region
+    ManagedBy   = local.common_tags.ManagedBy
     Tier        = "private"
   }
 }
@@ -133,11 +133,11 @@ resource "aws_security_group" "web" {
 
   tags = {
     Name        = "${local.name_prefix}web-sg"
-    Environment = "local.common_tags.Environment"
-    Project     = "local.common_tags.Project"
-    Owner       = "local.common_tags.Owner"
-    CostCenter  = "local.common_tags.CostCenter"
-    Region      = "local.common_tags.Region"
-    ManagedBy   = "local.common_tags.ManagedBy"
+    Environment = local.common_tags.Environment
+    Project     = local.common_tags.Project
+    Owner       = local.common_tags.Owner
+    CostCenter  = local.common_tags.CostCenter
+    Region      = local.common_tags.Region
+    ManagedBy   = local.common_tags.ManagedBy
   }
 }
